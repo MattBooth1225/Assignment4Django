@@ -6,6 +6,8 @@ import CustomerList from '@/components/CustomerList.vue'
 import CustomerCreate from '@/components/CustomerCreate.vue'
 import InvestmentList from '@/components/InvestmentList.vue'
 import InvestmentCreate from '@/components/InvestmentCreate.vue'
+import StockList from '@/components/StockList.vue'
+import StockCreate from '@/components/StockCreate.vue'
 
 
 const routes = [
@@ -61,6 +63,26 @@ const routes = [
     path: '/investment-create/:pk',
     name: 'InvestmentUpdate',
     component: InvestmentCreate
+  },
+  {
+    path: '/stock-list',
+    name: 'StockList',
+    component: StockList
+  },
+  {
+    path: '/stock-list/:msg',
+    name: 'StockUpdatedList',
+    component: StockList
+  },
+  {
+    path: '/stock-create',
+    name: 'StockCreate',
+    component: StockCreate
+  },
+  {
+    path: '/stock-create/:pk',
+    name: 'StockUpdate',
+    component: StockCreate
   },
 
   {
