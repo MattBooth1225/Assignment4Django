@@ -56,7 +56,50 @@
       credentials.customusername = credentials.username
       return axios.post(url, credentials);
     }
-  
+
+    getInvestment(param_pk) {
+      const url = `${API_URL}/api/investments/${param_pk}`;
+      let jwtToken = localStorage.getItem('token');
+      console.log(":::jwtToken:::::"+jwtToken);
+      const headers = {Authorization: `jwt ${jwtToken}`};
+      return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
+   }
+   
+   
+    getInvestmentList() {
+        const url = `${API_URL}/api/investments`;
+        let jwtToken = localStorage.getItem('token');
+        console.log(":::jwtToken:::::" + jwtToken);
+        const headers = {Authorization: `jwt ${jwtToken}`};
+        return axios.get(url, {headers: headers});
+   
+   
+    }
+   
+    addNewInvestment(investment){
+      const url = `${API_URL}/api/investments/`;
+      let jwtToken = localStorage.getItem('token');
+      const headers = {Authorization: `jwt ${jwtToken}`};
+      return axios.post(url, investment, {headers: headers});
+   }
+   
+   
+   updateInvestment(investment){
+     const url = `${API_URL}/api/investments/${investment.pk}`;
+     let jwtToken = localStorage.getItem('token');
+     const headers = {Authorization: `jwt ${jwtToken}`};
+     return axios.put(url, investment, {headers: headers});
+   }
+   
+   
+   deleteInvestment(investment_Pk){
+      const url = `${API_URL}/api/investments/${investment_Pk}`;
+      let jwtToken = localStorage.getItem('token');
+      const headers = {Authorization: `jwt ${jwtToken}`};
+      return axios.delete(url, {headers: headers});
+   }
+   
+   
   }
   
-  
+
