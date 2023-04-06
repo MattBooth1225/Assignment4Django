@@ -42,7 +42,7 @@
                 </button>
                 <div class="card" v-for="stock in stocks" v-bind:key="stock">
                     <div class="card-header" :id="'heading' + stock.pk">
-                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" :data-bs-target="'#collapse' + investment.pk" aria-expanded="true" :aria-controls="'collapse' + investment.pk">
+                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" :data-bs-target="'#collapse' + stock.pk" aria-expanded="true" :aria-controls="'collapse' + stock.pk">
                             <h6 style="color: #0275d8; float: left">Customer {{stock.cust_number}} - {{stock.name}} stock</h6>
                             <!-- Might Need to Be Fixed -->
                         </button>
@@ -185,7 +185,7 @@
             addNewStock() {
                 if (localStorage.getItem("isAuthenticates")
                     && JSON.parse(localStorage.getItem("isAuthenticates")) === true) {
-                    router.push('/investment-create');
+                    router.push('/stock-create');
                 } else {
                     router.push("/auth");
                 }

@@ -100,12 +100,12 @@
    }
    
    getStock(param_pk) {
-    const url = `${API_URL}/api/stocks/${param_pk}`;
-    let jwtToken = localStorage.getItem('token');
-    console.log(":::jwtToken:::::"+jwtToken);
-    const headers = {Authorization: `jwt ${jwtToken}`};
-    return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
- }
+      const url = `${API_URL}/api/stocks/${param_pk}`;
+      let jwtToken = localStorage.getItem('token');
+      console.log(":::jwtToken:::::"+jwtToken);
+      const headers = {Authorization: `jwt ${jwtToken}`};
+      return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
+   }
  
  
   getStockList() {
@@ -115,8 +115,7 @@
       const headers = {Authorization: `jwt ${jwtToken}`};
       return axios.get(url, {headers: headers});
  
- 
-  }
+    }
  
   addNewStock(stock){
     const url = `${API_URL}/api/stocks/`;
